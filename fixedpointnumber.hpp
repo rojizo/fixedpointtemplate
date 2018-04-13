@@ -37,7 +37,7 @@ public:
         data += rhs.data;
         return *this;
     }
-    friend fixedpointnumber& operator+(fixedpointnumber a, const fixedpointnumber& b) {
+    friend fixedpointnumber operator+(fixedpointnumber a, const fixedpointnumber& b) {
         a += b;
         return a;
     }
@@ -46,11 +46,14 @@ public:
         data -= rhs.data;
         return *this;
     }
-    friend fixedpointnumber& operator-(fixedpointnumber a, const fixedpointnumber& b) {
+    friend fixedpointnumber operator-(fixedpointnumber a, const fixedpointnumber& b) {
         a -= b;
         return a;
     }
     
+    fixedpointnumber& operator+(const fixedpointnumber &a) {
+        return a;
+    }
     fixedpointnumber& operator+(fixedpointnumber &a) {
         return a;
     }
